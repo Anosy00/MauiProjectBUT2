@@ -7,11 +7,16 @@
     Shell.FlyoutBehavior="Flyout"
     Title="LucasTHEODOREMauiApp">
 
-    <FlyoutItem Title="BottomBar">
-        <ShellContent Title="Customer" ContentTemplate="{DataTemplate local:MainPage}" 
-                      Route="MainPage"/> 
-        
+    <FlyoutItem Title="BottomBar" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Home" ContentTemplate="{DataTemplate local:MainPage}" 
+                      Route="MainPage"
+                      Icon="accueil.png"/> 
+        
+        <ShellContent Title="Menu 1" ContentTemplate="{DataTemplate local:MainPage}" 
                       Route="MainPage"/> 
+        <ShellContent Title="Menu 2" ContentTemplate="{DataTemplate local:MainPage}" 
+                      Route="MainPage"/>
+        <ShellContent Title="Menu 3" ContentTemplate="{DataTemplate local:MainPage}" 
+                      Route="MainPage"/>
     </FlyoutItem>
 </Shell>
