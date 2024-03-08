@@ -7,9 +7,11 @@
         public MainPage()
         {
             InitializeComponent();
+            
+            
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        /*private void OnCounterClicked(object sender, EventArgs e)
         {
             count++;
 
@@ -19,7 +21,7 @@
                 CounterBtn.Text = $"Clicked {count} times";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        }*/
     }
 
 }
