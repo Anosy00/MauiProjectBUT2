@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="LucasTHEODOREMauiApp.MainPage">
+    
+    <StackLayout>
+        <StackLayout>
+            <Label Text="FLASH MCQUEEN !" 
+                   HorizontalOptions="Center"
+                   Padding="0, 20, 0, 10"
+                   FontSize="35"
+                   FontFamily="bold"/>
+            
+            <Label Text="Ka-chow"
+                   HorizontalOptions="Center"
+                   FontSize="20"
+                   TextColor="DimGrey"/>
+        </StackLayout>
+        <FlexLayout Direction="Row" JustifyContent="SpaceAround" Margin="0, 50, 0, 0">
+            <Image Source="carsposter.jpg" Aspect="AspectFit" WidthRequest="150" VerticalOptions="Center"/>
+            <Image Source="carsposter2.jpg" Aspect="AspectFit" WidthRequest="170" VerticalOptions="Center"/>
+        </FlexLayout>
+        <Button Text="Ka-chow"
+                BackgroundColor="Red"
+                TextColor="Black"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0, 50, 0, 50"
+                Clicked="Button_OnClicked"/>
+        <toolkit:MediaElement x:Name="mediaElement"
+                              ShouldAutoPlay="True"
+                              ShouldShowPlaybackControls="True"
+                              Source="embed://video.mp4"
+                              HeightRequest="200"
+                              WidthRequest="400"
+                              />
+    </StackLayout>
+    
+
+</ContentPage>
