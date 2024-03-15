@@ -92,6 +92,10 @@
 	    <DependentUpon>GifPage.xaml</DependentUpon>
 	    <SubType>Code</SubType>
 	  </Compile>
+	  <Compile Update="ViewModel\GifFragment.xaml.cs">
+	    <DependentUpon>GifFragment.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 	
 </Project>

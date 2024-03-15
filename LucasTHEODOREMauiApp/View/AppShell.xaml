@@ -14,8 +14,8 @@
                       Route="MainPage"
                       Icon="accueil.png"/> 
         
-        <ShellContent Title="Menu 1" ContentTemplate="{DataTemplate local:MainPage}" 
-                      Route="MainPage"/> 
+        <ShellContent Title="Menu 1" ContentTemplate="{DataTemplate view:GifPage}" 
+                      Route="GifPage"/> 
         <ShellContent Title="Menu 2" ContentTemplate="{DataTemplate local:MainPage}" 
                       Route="MainPage"/>
         <ShellContent Title="Menu 3" ContentTemplate="{DataTemplate local:MainPage}" 

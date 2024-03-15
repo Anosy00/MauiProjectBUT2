@@ -4,7 +4,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LucasTHEODOREMauiApp.View.GifPage">
     <StackLayout>
-        <Button ImageSource="carsgif.gif"/>
         <Image Source="carsgif.gif"
                IsAnimationPlaying="True"/>
     </StackLayout>

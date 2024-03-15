@@ -12,4 +12,6 @@ public partial class GifPage : ContentPage
     {
         InitializeComponent();
     }
+
+    
 }
