@@ -1,4 +1,5 @@
-﻿using LucasTHEODOREMauiApp.View;
+﻿using CommunityToolkit.Maui.Views;
+using LucasTHEODOREMauiApp.View;
 
 namespace LucasTHEODOREMauiApp
 {
