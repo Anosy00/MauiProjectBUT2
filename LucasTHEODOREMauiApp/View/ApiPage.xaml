@@ -24,8 +24,12 @@
                                    HeightRequest="60"
                                    WidthRequest="60" />
                             <Label Grid.Column="1"
-                                   Text="{Binding }"
+                                   Text="{Binding Name}"
                                    FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Description}"
+                                   VerticalOptions="End" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
