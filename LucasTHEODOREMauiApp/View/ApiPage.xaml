@@ -3,37 +3,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LucasTHEODOREMauiApp.View.ApiPage"
+             xmlns:vm="clr-namespace:LucasTHEODOREMauiApp.ViewModel"
+             x:DataType="vm:ApiPageViewModel"
              >
     <ContentPage.Content>
-        <ListView BindingContext="{Binding ApiList}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.RowSpan="2"
-                                   Source="{Binding ImageUrl}"
-                                   Aspect="AspectFill"
-                                   HeightRequest="60"
-                                   WidthRequest="60" />
-                            <Label Grid.Column="1"
-                                   Text="{Binding Name}"
-                                   FontAttributes="Bold" />
-                            <Label Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="{Binding Description}"
-                                   VerticalOptions="End" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout Orientation="Vertical">
+            <Button Text="Clique wallah" Command="{Binding FetchDisneyCharacterCommand}"/>
+            <ListView x:Name="listCharacter">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="{Binding ImageUrl}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="60"
+                                       WidthRequest="60" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding Name}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding Description}"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

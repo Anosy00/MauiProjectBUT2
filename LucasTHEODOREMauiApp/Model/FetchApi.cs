@@ -2,54 +2,46 @@
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace LucasTHEODOREMauiApp;
 
 public class FetchApi
 {
-    private ObservableCollection<Character> _observableCollection;
-    public async void fetchDisneyCharacter()
-    {
-        Uri uri = new Uri("https://api.disneyapi.dev/character?page=1&pageSize=10000");
-        HttpClient client = new HttpClient();
-        try
-        {
-            HttpResponseMessage responseMessage = await client.GetAsync(uri);
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                string content = await responseMessage.Content.ReadAsStringAsync();
-                Console.WriteLine(content);
-                using (JsonDocument doc = JsonDocument.Parse(content))
-                {
-                    JsonElement root = doc.RootElement;
-                    if (root.TryGetProperty("data", out JsonElement data))
-                    {
-                        foreach (JsonElement item in data.EnumerateArray())
-                        {
-                            Character character = new Character();
-                            character.Name = item.GetProperty("name").GetString();
-                            character.ImageUrl = item.GetProperty("imageurl").GetString();
-                            character.Description = item.GetProperty("films").GetString();
-                            _observableCollection.Add(character);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No data property found");
-                    }
-                }
+    [JsonPropertyName("info")]
+    public FetchApiInfo info { get; set; }
+    [JsonPropertyName("data")]
+    public FetchApiData data { get; set; }
+}
 
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-    }
+public class RootObject
+{
     
-    public ObservableCollection<Character> GetArrayList()
-    {
-        return _observableCollection;
-    }
+}
+
+public class FetchApiInfo
+{
+    public int count { get; set; }
+    public int totalPages { get; set; }
+    public object previousPage { get; set; }
+    public string nextPage { get; set; }
+}
+
+public class FetchApiData
+{
+    public int _id { get; set; }
+    public string[] films { get; set; }
+    public object[] shortFilms { get; set; }
+    public string[] tvShows { get; set; }
+    public string[] videoGames { get; set; }
+    public object[] parkAttractions { get; set; }
+    public object[] allies { get; set; }
+    public object[] enemies { get; set; }
+    public string sourceUrl { get; set; }
+    public string name { get; set; }
+    public string imageUrl { get; set; }
+    public string createdAt { get; set; }
+    public string updatedAt { get; set; }
+    public string url { get; set; }
+    public int __v { get; set; }
 }

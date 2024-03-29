@@ -13,14 +13,14 @@ public partial class ApiPage : ContentPage
     public ApiPage()
     {
         InitializeComponent();
-        var apiViewModel = new ApiPageViewModel();
-        BindingContext = apiViewModel;
+        List<Character> characters = new List<Character>()
+        {
+            new Character{ Name="Lucas", ImageUrl = "https://static.wikia.nocookie.net/disney/images/d/d3/Vlcsnap-2015-05-06-23h04m15s601.png", Description = "le meilleur"}
+        };
+        
+        listCharacter.ItemsSource = characters;
     }
     
-    private async void Button_OnClicked(object? sender, EventArgs e)
-    {
-        ContentPage page = new GifFragment();
-        await Navigation.PushAsync(page);
-    }
+    
 
 }
