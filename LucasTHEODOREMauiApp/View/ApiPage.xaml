@@ -8,7 +8,7 @@
              >
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Button Text="Clique wallah" Command="{Binding FetchDisneyCharacterCommand}"/>
+            <Button Text="Clic to fetch" Clicked="Button_OnClicked"/>
             <ListView x:Name="listCharacter">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -23,22 +23,23 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.RowSpan="2"
-                                       Source="{Binding ImageUrl}"
+                                       Source="{Binding Name}"
                                        Aspect="AspectFill"
                                        HeightRequest="60"
                                        WidthRequest="60" />
                                 <Label Grid.Column="1"
-                                       Text="{Binding Name}"
+                                       Text="{Binding Description}"
                                        FontAttributes="Bold" />
                                 <Label Grid.Row="1"
                                        Grid.Column="1"
-                                       Text="{Binding Description}"
+                                       Text="{Binding ImageUrl}"
                                        VerticalOptions="End" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Label x:Name="labelText"></Label>
         </StackLayout>
         
     </ContentPage.Content>
